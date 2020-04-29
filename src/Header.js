@@ -1,30 +1,61 @@
 import React from "react";
 import headerIllustration from "./assets/headerIllustration.png";
-import "./Header.css";
+import "./styles/Header.scss";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className="wrapper">
       <h1>Notice Board</h1>
-      <h3>
+      <p className="headingText">
         Have you noticed something nice about someone you know lately? Let them
         know you’re thinking of them by leaving a note on our notice board.
-      </h3>
+      </p>
       <section className="headerEls">
-          <div className="newNotice">
-            <h2>New Notice</h2>
-            <span className="plus">+</span>
-            <form action="">
-              <input type="text" className="name" placeholder="Name of your recipient"/>
-              <textarea type="text" className="newText" placeholder="What did you notice?"/>
-            </form>
-          </div>
-            <div className="illustration">
-                <img
-                  src={headerIllustration}
-                  alt="Illustration of a person walking up to a wall with notes pinned to it."
-                />
-            </div>
+        <div className="newNotice">
+          <h2>New Notice</h2>
+          <form action="" onSubmit={props.submit}>
+            <button type="submit" className="plus" tabIndex="1">
+              +
+            </button>
+            <input
+              tabIndex="0"
+              onChange={props.userInput}
+              id="recipient"
+              type="text"
+              className="name"
+              placeholder="Name of your recipient *"
+              maxLength="30"
+              value={props.values.recipient}
+            />
+            <textarea
+              tabIndex="0"
+              onChange={props.userInput}
+              id="message"
+              type="text"
+              className="newMessage"
+              placeholder="What did you notice? *"
+              maxLength="250"
+              value={props.values.message}
+            />
+            <input
+              tabIndex="0"
+              onChange={props.userInput}
+              id="sender"
+              type="text"
+              className="senderName"
+              placeholder="Your Name (optional)"
+              maxLength="30"
+              value={props.values.sender}
+            />
+          </form>
+          <p className="required">* = Required Field</p>
+        </div>
+        <div className="illustration">
+          <img
+            src={headerIllustration}
+            alt="Illustration of a person walking up to a wall with notes pinned to it."
+          />
+        </div>
       </section>
     </header>
   );
