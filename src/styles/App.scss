@@ -76,6 +76,16 @@ img {
   height: 400px;
 }
 
+.swal-button {
+  background-color: #f50057;
+  transition: all 0.3s;
+}
+
+.swal-button:not([disabled]):hover {
+  background-color: #f7e76f;
+  color: #000;
+}
+
 @media (min-width: 2200px) {
   .wrapper {
     max-width: 1500px;

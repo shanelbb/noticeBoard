@@ -9,7 +9,7 @@ const Main = (props) => {
         {props.notices.map((notice, i) => {
           return (
             <div key={i} className="notice">
-              <h3 className="hi">Hi {notice.recipient}</h3>
+              <h3 className="hi">Hi {notice.recipient}!</h3>
               <p className="message">{notice.message}</p>
               <h5 className="from">From {notice.sender}</h5>
             </div>

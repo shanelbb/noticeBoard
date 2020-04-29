@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import firebase from "./firebase";
+import swal from "sweetalert";
 
 import "./styles/App.scss";
 
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-
 
 class App extends Component {
   constructor() {
@@ -54,7 +54,7 @@ class App extends Component {
         sender: "",
       });
     } else {
-      alert("Please fill in required fields");
+      swal("Uh-oh!", "You need to fill in the required fields.");
     }
   };
 
