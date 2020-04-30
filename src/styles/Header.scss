@@ -7,7 +7,8 @@ header {
   font-size: 1.8rem;
   line-height: 1.6;
   text-align: center;
-  margin: 20px;
+  margin: 20px auto;
+  width: 50vw;
 }
 
 .headerEls {
@@ -130,7 +131,16 @@ textarea {
   }
 }
 
+@media (max-width: 1310px) {
+  .headingText {
+    width: 60vw;
+  }
+}
+
 @media (max-width: 1200px) {
+  header {
+    height: auto;
+  }
   .headerEls {
     height: auto;
   }
@@ -149,41 +159,45 @@ textarea {
   }
 }
 
+@media (max-width: 1090px) {
+  .headingText {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 935px) {
+  .headingText {
+    width: 80vw;
+  }
+}
+
 @media (max-width: 896px) {
   header {
     height: auto;
   }
+
   .headerEls {
     flex-direction: column;
     margin-bottom: 0;
   }
+  
   .newNotice,
   .illustration {
     align-self: center;
   }
 
   .illustration {
-    margin: 50px 0;
+    margin: 70px 0 30px 0;
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 700px) {
+  header {
+    height: auto;
+  }
  .headerEls {
    height: auto;
  }
- .newNotice {
-  height: 300px;
-  width: 300px;
-}
-
-input,
-textarea {
-  width: 260px;
-}
-
-.newMessage {
-  height: 135px;
-}
 }
 
 @media (max-width: 365px) {

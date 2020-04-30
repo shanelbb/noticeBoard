@@ -25,17 +25,15 @@ class App extends Component {
       const newState = [];
       const data = response.val();
       for (let key in data) {
-        // newState.push(data[key]);
         newState.unshift({
           noticeId: key,
           recipient: data[key].recipient,
           message: data[key].message,
           sender: data[key].sender,
-          likes: data[key].likes
+          likes: data[key].likes,
+          datePosted: data[key].datePosted
         })
       }
-
-      console.log(this.state.date);
 
       this.setState({
         notices: newState,
@@ -51,7 +49,8 @@ class App extends Component {
       recipient: this.state.recipient,
       message: this.state.message,
       sender: this.state.sender,
-      likes: 0
+      likes: 0,
+      datePosted: new Date().toDateString()
     };
     //and send that to the database.
     if (userInput.recipient !== "" && userInput.message !== "") {
@@ -103,15 +102,11 @@ class App extends Component {
           />
         </div>
         <div className="mainBG largeWrapper">
-          <Main notices={this.state.notices} likeButton={this.handleLikeButton}/>
-          {/* <ul>
-            {this.state.notices.map((notice, i) => {
-              return <li key={i}>{notice.recipient}</li>
-            })}
-          </ul> */}
+          <Main date={this.state.date} notices={this.state.notices} likeButton={this.handleLikeButton}/>
         </div>
         <footer className="largeWrapper">
-          <p>&#169; Shanel Beebe 2020</p>
+          <p>&#169; <a href="https://shanelbeebe.com" target="_blank" rel='noopener noreferrer'>Shanel Beebe</a> 2020</p>
+          <p>Illustration by <a href="https://undraw.co/illustrations" target="_blank" rel='noopener noreferrer'> undraw.co</a></p>
         </footer>
       </>
     );

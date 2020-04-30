@@ -10,14 +10,14 @@ main {
 .notices {
   margin: 30px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 30px;
   justify-items: center;
 }
 
 .notice {
-  width: 275px;
-  height: 275px;
+  width: 280px;
+  height: 280px;
   background-color: #f7e76f;
   border-radius: 10px;
   padding: 0 10px;
@@ -37,7 +37,7 @@ main {
 .from {
   text-align: center;
   width: 100%;
-  height: 40px;
+  height: 35px;
   overflow: scroll;
 }
 
@@ -50,6 +50,11 @@ main {
   border: none;
   font-size: 20px;
   text-align: center;
-  height: 40px;
+  height: 30px;
   width: 80px;
+}
+
+.date {
+  text-align: center;
+  padding-top: 15px;
 }

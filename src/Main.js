@@ -10,6 +10,7 @@ const Main = (props) => {
         {props.notices.map((notice, i) => {
           return (
             <div key={i} className="notice">
+              <p className="date">{notice.datePosted}</p>
               <h3 className="hi">Hi {notice.recipient}!</h3>
               <p className="message">{notice.message}</p>
               <h5 className="from">From {notice.sender || "Anonymous"}</h5>
