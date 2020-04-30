@@ -132,7 +132,7 @@ textarea {
 
 @media (max-width: 1200px) {
   .headerEls {
-    height: 55vh;
+    height: auto;
   }
   .newNotice {
     height: 300px;
@@ -155,6 +155,7 @@ textarea {
   }
   .headerEls {
     flex-direction: column;
+    margin-bottom: 0;
   }
   .newNotice,
   .illustration {
@@ -164,6 +165,25 @@ textarea {
   .illustration {
     margin: 50px 0;
   }
+}
+
+@media (max-height: 600px) {
+ .headerEls {
+   height: auto;
+ }
+ .newNotice {
+  height: 300px;
+  width: 300px;
+}
+
+input,
+textarea {
+  width: 260px;
+}
+
+.newMessage {
+  height: 135px;
+}
 }
 
 @media (max-width: 365px) {

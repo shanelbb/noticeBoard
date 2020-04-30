@@ -70,6 +70,7 @@ h5 {
   margin: 15px 0;
 }
 
+
 img {
   // display: none;
   max-width: 100%;
@@ -85,6 +86,20 @@ img {
   background-color: #f7e76f;
   color: #000;
 }
+
+footer {
+  background-color: #f50057;
+  height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 
 @media (min-width: 2200px) {
   .wrapper {
@@ -136,25 +151,14 @@ img {
   }
 }
 
+@media (max-height: 600px) {
+  img {
+    height: 250px;
+  }
+}
+
 @media (max-width: 365px) {
   img {
     height: 175px;
   }
-}
-
-main.wrapper {
-  margin: 60px auto 0px auto;
-}
-
-footer {
-  background-color: #f50057;
-  height: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.4rem;
-  text-align: center;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
 }
