@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/Main.scss";
+import Likes from "./Likes";
 
 const Main = (props) => {
   return (
@@ -11,7 +12,8 @@ const Main = (props) => {
             <div key={i} className="notice">
               <h3 className="hi">Hi {notice.recipient}!</h3>
               <p className="message">{notice.message}</p>
-              <h5 className="from">From {notice.sender}</h5>
+              <h5 className="from">From {notice.sender || "Anonymous"}</h5>
+              <Likes likeButton={props.likeButton} noticeId={notice.noticeId} likes={notice.likes}/>
             </div>
           );
         })}

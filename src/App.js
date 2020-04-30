@@ -6,7 +6,6 @@ import "./styles/App.scss";
 
 import Header from "./Header";
 import Main from "./Main";
-import Footer from "./Footer";
 
 class App extends Component {
   constructor() {
@@ -26,8 +25,17 @@ class App extends Component {
       const newState = [];
       const data = response.val();
       for (let key in data) {
-        newState.push(data[key]);
+        // newState.push(data[key]);
+        newState.unshift({
+          noticeId: key,
+          recipient: data[key].recipient,
+          message: data[key].message,
+          sender: data[key].sender,
+          likes: data[key].likes
+        })
       }
+
+      console.log(this.state.date);
 
       this.setState({
         notices: newState,
@@ -43,6 +51,7 @@ class App extends Component {
       recipient: this.state.recipient,
       message: this.state.message,
       sender: this.state.sender,
+      likes: 0
     };
     //and send that to the database.
     if (userInput.recipient !== "" && userInput.message !== "") {
@@ -58,12 +67,29 @@ class App extends Component {
     }
   };
 
+  handleLikeButton = (noticeId) => {
+    const newState = {...this.state}
+    const notices = newState.notices;
+
+    const newNotices = notices.map((notice, i) => {
+      if (notices[i].noticeId === noticeId) {
+        notice.likes = notice.likes + 1
+        const dbRef = firebase.database().ref(noticeId)
+        dbRef.update({
+          likes: notice.likes
+        })
+      }
+      return notice;
+    } )
+    this.setState({
+      notices: newNotices
+    })
+  }
+
   handleUserInput = (e) => {
     this.setState({
       [e.target.id]: e.target.value,
     });
-
-    console.log("State", this.state);
   };
 
   render() {
@@ -77,14 +103,16 @@ class App extends Component {
           />
         </div>
         <div className="mainBG largeWrapper">
-          <Main notices={this.state.notices} />
+          <Main notices={this.state.notices} likeButton={this.handleLikeButton}/>
           {/* <ul>
             {this.state.notices.map((notice, i) => {
               return <li key={i}>{notice.recipient}</li>
             })}
           </ul> */}
         </div>
-        <Footer />
+        <footer className="largeWrapper">
+          <p>&#169; Shanel Beebe 2020</p>
+        </footer>
       </>
     );
   }
