@@ -52,6 +52,9 @@ main {
   text-align: center;
   height: 30px;
   width: 80px;
+  &:focus {
+    border: 1px dotted #f50057;
+  }
 }
 
 .date {

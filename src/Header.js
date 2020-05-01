@@ -14,9 +14,10 @@ const Header = (props) => {
         <div className="newNotice">
           <h2>New Notice</h2>
           <form action="" onSubmit={props.submit}>
-            <button type="submit" className="plus" tabIndex="1">
+            <button type="submit" className="plus" tabIndex="0" aria-label="addNotice">
               +
             </button>
+            <label htmlFor="recipient" className='visuallyHidden'>Name of your recipient (required)</label>
             <input
               tabIndex="0"
               onChange={props.userInput}
@@ -27,6 +28,7 @@ const Header = (props) => {
               maxLength="30"
               value={props.values.recipient}
             />
+            <label htmlFor="message" className="visuallyHidden">What did you notice? (required)</label>
             <textarea
               tabIndex="0"
               onChange={props.userInput}
@@ -37,6 +39,7 @@ const Header = (props) => {
               maxLength="250"
               value={props.values.message}
             />
+            <label htmlFor="sender" className="visuallyHidden">Your Name (optional)</label>
             <input
               tabIndex="0"
               onChange={props.userInput}
