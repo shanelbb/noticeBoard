@@ -63,6 +63,7 @@ textarea {
 .name,
 .newMessage,
 .senderName {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
 }
 
@@ -72,7 +73,6 @@ textarea {
 }
 
 .newMessage {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 15px 0;
   height: 235px;
   resize: none;
