@@ -27,6 +27,7 @@ header {
   padding: 20px;
   position: relative;
   margin-top: 30px;
+  // Google material design box-shadow
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -63,7 +64,7 @@ textarea {
 .name,
 .newMessage,
 .senderName {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
 }
 
@@ -180,7 +181,7 @@ textarea {
     flex-direction: column;
     margin-bottom: 0;
   }
-  
+
   .newNotice,
   .illustration {
     align-self: center;
@@ -195,9 +196,9 @@ textarea {
   header {
     height: auto;
   }
- .headerEls {
-   height: auto;
- }
+  .headerEls {
+    height: auto;
+  }
 }
 
 @media (max-width: 365px) {

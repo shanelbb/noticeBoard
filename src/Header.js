@@ -13,22 +13,36 @@ const Header = (props) => {
       <section className="headerEls">
         <div className="newNotice">
           <h2>New Notice</h2>
+
+          {/* handleSubmit function runs here when form is submitted */}
           <form action="" onSubmit={props.submit}>
-            <button type="submit" className="plus" tabIndex="0" aria-label="addNotice">
+            <button
+              type="submit"
+              className="plus"
+              tabIndex="0"
+              aria-label="addNotice"
+            >
               +
             </button>
-            <label htmlFor="recipient" className='visuallyHidden'>Name of your recipient (required)</label>
+            {/* visuallyHidden label for accessiblity */}
+            <label htmlFor="recipient" className="visuallyHidden">
+              Name of your recipient (required)
+            </label>
             <input
               tabIndex="0"
+              // runs handleUserInput function when user types in the input
               onChange={props.userInput}
               id="recipient"
               type="text"
               className="name"
               placeholder="Name of your recipient *"
               maxLength="30"
+              // updates the value of the input based on state that is being updated from handleUserInput function
               value={props.values.recipient}
             />
-            <label htmlFor="message" className="visuallyHidden">What did you notice? (required)</label>
+            <label htmlFor="message" className="visuallyHidden">
+              What did you notice? (required)
+            </label>
             <textarea
               tabIndex="0"
               onChange={props.userInput}
@@ -39,7 +53,9 @@ const Header = (props) => {
               maxLength="250"
               value={props.values.message}
             />
-            <label htmlFor="sender" className="visuallyHidden">Your Name (optional)</label>
+            <label htmlFor="sender" className="visuallyHidden">
+              Your Name (optional)
+            </label>
             <input
               tabIndex="0"
               onChange={props.userInput}
